@@ -1,0 +1,363 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a2a1f;
+    background-image: 
+        linear-gradient(45deg, #2d3a2a 1px, transparent 1px),
+        linear-gradient(-45deg, #2d3a2a 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: 'Courier New', 'Fira Code', 'Segoe UI', monospace;
+    color: #d4e6d4;
+    line-height: 1.6;
+}
+
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.05) 0px,
+        rgba(0, 0, 0, 0.05) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(135deg, #0a1f0a 0%, #0a1a0a 100%);
+    border-bottom: 3px solid #6b8c42;
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.emblem {
+    font-size: 48px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.logo h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: #8bb56a;
+    text-shadow: 0 2px 0 #1a3a1a;
+}
+
+.logo p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #6b8c42;
+}
+
+.search-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#search {
+    width: 100%;
+    padding: 12px 20px;
+    background: #0f200f;
+    border: 2px solid #4a6a2a;
+    color: #d4e6d4;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #8bb56a;
+    background: #0a150a;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f200f;
+    border: 2px solid #4a6a2a;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100;
+}
+
+.search-dropdown.active {
+    display: block;
+}
+
+.search-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #2a3a2a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.search-item:hover {
+    background: #1a2f1a;
+    padding-left: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: #0f200f;
+    border: 2px solid #4a6a2a;
+    color: #8bb56a;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: #1a2f1a;
+    border-color: #6b8c42;
+}
+
+.nav-btn.active {
+    background: #4a6a2a;
+    color: #0a1f0a;
+    border-color: #8bb56a;
+    box-shadow: 0 2px 8px rgba(75, 107, 42, 0.5);
+}
+
+main {
+    padding: 40px 0;
+    min-height: 70vh;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: #8bb56a;
+}
+
+.hero-line {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6b8c42, transparent);
+    margin: 15px auto;
+}
+
+.hero p {
+    color: #aac89a;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.video-card {
+    background: linear-gradient(135deg, #0f200f, #0a150a);
+    border: 2px solid #4a6a2a;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.video-icon {
+    font-size: 40px;
+}
+
+.video-card h3 {
+    color: #8bb56a;
+    font-size: 18px;
+}
+
+.video-card p {
+    font-size: 13px;
+    color: #aac89a;
+}
+
+.video-btn {
+    background: #2a3a2a;
+    border: 1px solid #6b8c42;
+    color: #8bb56a;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.video-btn:hover {
+    background: #4a6a2a;
+    color: #0a1f0a;
+    border-color: #8bb56a;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: linear-gradient(135deg, #0f200f, #0a150a);
+    border: 2px solid #2a3a2a;
+    padding: 25px;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    border-color: #6b8c42;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #8bb56a;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #aac89a;
+}
+
+.card-tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 8px;
+    background: #1a2a1a;
+    border-left: 3px solid #6b8c42;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #8bb56a;
+}
+
+.info-panel {
+    background: #0a150a;
+    border-left: 5px solid #8bb56a;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.info-mark {
+    font-size: 24px;
+    color: #6b8c42;
+}
+
+.info-panel p {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    color: #bcd6ac;
+}
+
+footer {
+    background: #0a1a0a;
+    border-top: 2px solid #2a3a2a;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #6b8c42;
+}
+
+.motto {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    .video-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
